@@ -1,3 +1,4 @@
+
 #include"stdafx.h"
 #include"task1.h"
 #include<iostream>
@@ -13,14 +14,19 @@ int multiples(int upperBound) {
 	return sum;
 }
 
-void test_task1() {
-	int n = 0;
+bool test_task1() {
+	bool testOk = true;
+	int n = multiples(-10);
+	if (n != 0) {
+		testOk = false;
+	}
+	n = multiples(0);
+	if (n != 0) {
+		testOk = false;
+	}
 	n = multiples(10);
 	if (n != 23) {
-		cout << "faileds!";
+		testOk = false;
 	}
-	else
-		if (n = 23) {
-			cout << "perfect";
-		}
+	return testOk;
 }
