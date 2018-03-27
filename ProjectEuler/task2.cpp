@@ -2,16 +2,9 @@
 #include"stdafx.h"
 #include<iostream>
 using namespace std;
-
-void fibonacci() {
-	int i = 1, j = 2, k = 3;
-	while (i < 4000000 && j < 4000000 && k < 4000000) {
-		if (k % 2 == 0) {
-			cout << k << endl;
-		}
-		i = j;
-		j = k;
-		k = i + j;
-
+int fibonacci(int n) {
+	if (n == 1 || n == 2) {
+		return 1;
 	}
+	return fibonacci(n - 1) + fibonacci(n - 2);
 }

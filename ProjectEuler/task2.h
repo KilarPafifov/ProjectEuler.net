@@ -1,6 +1,5 @@
 #pragma once
-void fibonacci();
-
+int fibonacci(int n);
 
 
 
