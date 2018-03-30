@@ -1,5 +1,7 @@
 #pragma once
 int fibonacci(int n);
+void evenFibonacciTerms();
+int valuedTerms(int k);
 
 
 
