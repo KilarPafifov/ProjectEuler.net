@@ -1,7 +1,7 @@
 #pragma once
 int fibonacci(int n);
-void evenFibonacciTerms();
-int valuedTerms(int k);
+int sumOfEvenFibonacciTerms(int upperBound);
+bool isEven(int k);
 
 
 

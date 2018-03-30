@@ -8,24 +8,25 @@ int fibonacci(int n) {
 	}
 	return fibonacci(n - 1) + fibonacci(n - 2);
 }
-int valuedTerms(int k){
+bool isEven(int k){
 	if (k % 2 == 0) {
-		return k;
+		return true;
 	}
-	else return 0;
+	else {
+		return false;
+	}
 }
 
-void evenFibonacciTerms(){
-	int n;
-	cout << "put number: ";
-	cin >> n;
-	int i = 1, j = 2, k = 3, sum = 0;
-	while (i < n && j < n && k < n) {
-			sum += valuedTerms(k);
-		i = j;
-		j = k;
-		k = i + j;
-
+int sumOfEvenFibonacciTerms(int upperBound){
+	int sum = 0;
+	int i = 1;
+	int sequenceMember = fibonacci(i);
+	while (sequenceMember < upperBound){
+		if (isEven(sequenceMember)) {
+			sum += sequenceMember;
+		}
+		i++;
+		sequenceMember = fibonacci(i);
 	}
-	cout << endl << sum;
+	return sum;
 }
