@@ -31,21 +31,17 @@ int sumOfEvenFibonacciTerms(int upperBound){
 	return sum;
 }
 
-void testSumOfEvenFibonacciTerms(){
-	int n = sumOfEvenFibonacciTerms(10);
-	if (n != 10) {
-		cout << "wrong!" << endl;
+bool testSumOfEvenFibonacciTerms(){
+	if (sumOfEvenFibonacciTerms(10) != 10) {
+		return false;
 	}
-
-	n = sumOfEvenFibonacciTerms(0);
-	if (n != 0) {
-		cout << "wrong!" << endl;
+	if (sumOfEvenFibonacciTerms(0) != 0) {
+		return false;
 	}
-
-	n = sumOfEvenFibonacciTerms(-10);
-	if (n != 0) {
-		cout << "wrong!" << endl;
+	if (sumOfEvenFibonacciTerms(-10) != 0) {
+		return false;
 	}
+	return true;
 }
 
 

@@ -2,7 +2,7 @@
 int fibonacci(int n);
 int sumOfEvenFibonacciTerms(int upperBound);
 bool isEven(int k);
-void testSumOfEvenFibonacciTerms();
+bool testSumOfEvenFibonacciTerms();
 
 
 /*
