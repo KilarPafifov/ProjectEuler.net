@@ -30,3 +30,22 @@ int sumOfEvenFibonacciTerms(int upperBound){
 	}
 	return sum;
 }
+
+void testSumOfEvenFibonacciTerms(){
+	int n = sumOfEvenFibonacciTerms(10);
+	if (n != 10) {
+		cout << "wrong!" << endl;
+	}
+
+	n = sumOfEvenFibonacciTerms(0);
+	if (n != 0) {
+		cout << "wrong!" << endl;
+	}
+
+	n = sumOfEvenFibonacciTerms(-10);
+	if (n != 0) {
+		cout << "wrong!" << endl;
+	}
+}
+
+
