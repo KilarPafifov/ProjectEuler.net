@@ -1,50 +1,40 @@
-﻿
+﻿#include"task4.h"
 #include"stdafx.h"
 #include<iostream>
+#include<math.h>
 using namespace std;
-/*
 
-A palindromic number reads the same both ways.
-The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-Find the largest palindrome made from the product of two 3-digit numbers.
-
-*/
-
-
-
-bool isPalindrome(int number) {
-	int n = number;
-	long int* mas = new long int[n];
-	int p = 0;
-	while (number > 10) {
-		mas[p] = number % 10;
+int dischargeOfNumber(int number){
+	int k = 0;
+	while (number != 0) {
+		k += 1;
 		number /= 10;
-		p++;
 	}
-	mas[p + 1] = number;
+	return k;
+}
 
-	for (int i = 0; i < n / 2; i++) {
-		for (int j = n - 1; j > n / 2; j--) {
-			if (mas[i] != mas[j]) {
-				return false;
+bool isPalindrome(unsigned long int number) {
+	unsigned long int invertNumber = 0;
+	unsigned long int copyNumber = number;
+	
+	while (copyNumber) {
+		invertNumber *= 10;
+		invertNumber += copyNumber % 10;
+		copyNumber /= 10;
+	}
+	return invertNumber == number;
+}
+int task4() {
+	int largestPalindrome = 0;
+	for (int i = 100; i < 1000; i++) {
+		for (int j = 100; j < 1000; j++) {
+			if (isPalindrome(i * j)) {
+				if (largestPalindrome < (i * j)) {
+					largestPalindrome = i * j;
+				}
 			}
 		}
 	}
-	return true;
+	return largestPalindrome;
 }
 
-int main() {
-	cout << isPalindrome(999999);
-	/*long long int largestPalindrome = 0;
-	int l = 0;
-	for (int i = 100; i < 999; i++) {
-	for (int j = 100; j < 999; j++) {
-	l = i * j;
-	if (isPalindrome(l) == true) {
-	largestPalindrome = i * j;
-	}
-	}
-	}
-	cout << largestPalindrome;*/
-	system("pause");
-}

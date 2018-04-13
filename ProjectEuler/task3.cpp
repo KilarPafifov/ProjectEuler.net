@@ -16,4 +16,5 @@ bool isPrimeNumber(int number) {
 
 double largestPrimeFactor(double number) {
 	number = round(sqrt(number));
+	return number;
 }
